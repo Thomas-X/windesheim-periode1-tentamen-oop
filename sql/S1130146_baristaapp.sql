@@ -51,8 +51,8 @@ LOCK TABLES `comments` WRITE;
 
 INSERT INTO `comments` (`id`, `postid`, `comment`)
 VALUES
-	(1,1,'Ristretto coffee java doppio, seasonal con panna at a organic. Café au lait, as aromatic acerbic cream extra beans bar whipped so cultivar.'),
-	(2,1,'Ristretto coffeedoppio, seasonal con panna at a organic. Café au lait, as aromatic acerbic cream extra beans bar whipped so cultivar.');
+	(1,1,'Ristretto coffee java doppio, seasonal con panna at a organic. Cafe au lait, as aromatic acerbic cream extra beans bar whipped so cultivar.'),
+	(2,1,'Ristretto coffeedoppio, seasonal con panna at a organic. Cafe au lait, as aromatic acerbic cream extra beans bar whipped so cultivar.');
 
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -77,7 +77,7 @@ LOCK TABLES `posts` WRITE;
 
 INSERT INTO `posts` (`id`, `name`, `description`)
 VALUES
-	(1,'great brizillian coffee','Strong wings in as grounds chicory galão redeye french press cortado sugar. Mug spoon ristretto foam aroma iced to go redeye extra kopi-luwak. Lungo latte decaffeinated, con panna caffeine half and half organic lungo. Steamed, wings seasonal fair trade rich that con panna organic.');
+	(1,'great brizillian coffee','Strong wings in as grounds chicory galao redeye french press cortado sugar. Mug spoon ristretto foam aroma iced to go redeye extra kopi-luwak. Lungo latte decaffeinated, con panna caffeine half and half organic lungo. Steamed, wings seasonal fair trade rich that con panna organic.');
 
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;

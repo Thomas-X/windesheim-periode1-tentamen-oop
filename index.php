@@ -20,7 +20,7 @@ $_URL_PREPEND = "/~s1130146/P1_OOAPP_Tentamen";
 \Qui\lib\Routes::morphRoutes($_URL_PREPEND);
 
 
- \Qui\lib\SuperSeriousErrorLogger::enableErrorLogging(false);
+// \Qui\lib\SuperSeriousErrorLogger::enableErrorLogging(false);
 
 $_ENV = [];
 // setup ENV variables before setting up database classes etc

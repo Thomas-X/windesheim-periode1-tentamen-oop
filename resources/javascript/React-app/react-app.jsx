@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ForumHome from "./ForumHome";
 
+/*
+* Determines which component to use, uses a HOC for passing props down to used components
+* */
 const App = () => {
 	let Route = (props) => null;
 	switch (JSDATA.component) {

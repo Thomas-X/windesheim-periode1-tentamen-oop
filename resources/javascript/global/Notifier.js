@@ -1,5 +1,9 @@
 import $ from 'jquery';
 
+/*
+* A custom notification class :)
+* You can send notification from CNotifications.php in your controllers. Use a facade for reaching CNoficiations.php.
+* */
 export default class Notifier {
 
     constructor() {

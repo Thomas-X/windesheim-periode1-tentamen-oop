@@ -18,6 +18,10 @@ use Qui\lib\Request;
 use Qui\lib\Response;
 use Qui\lib\Routes;
 
+/*
+ * The controller used for all kinds of authentication, registration and verficiation, hey, that rhymes!
+ * Shows login/register pages and handles POST to login/register routes.
+ * */
 class AuthenticationController
 {
     public function showRegister(Request $req, Response $res)

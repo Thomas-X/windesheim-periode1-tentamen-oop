@@ -1,6 +1,9 @@
 import React from 'react';
 import {Helmet} from "react-helmet";
 
+/*
+* A react component because it was fun to do and I like working in react. Renders the home page of the forum.
+* */
 const ForumHome = () => {
 	return (
 		<div className={'container pageContainer'}>

@@ -15,6 +15,10 @@ use Qui\lib\Request;
 use Qui\lib\Response;
 use Qui\lib\Routes;
 
+/*
+ * The controller used for all of the blends part of the site.
+ * The method names speak for themselves.
+ * */
 class BlendsController
 {
     public static $params = [

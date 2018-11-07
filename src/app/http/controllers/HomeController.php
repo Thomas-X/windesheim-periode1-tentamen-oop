@@ -14,6 +14,9 @@ use Qui\lib\Request;
 use Qui\lib\Response;
 use Qui\lib\facades\Authentication;
 
+/*
+ * Show home page
+ * */
 class HomeController
 {
 
@@ -24,7 +27,6 @@ class HomeController
      */
     public function showHome(Request $req, Response $res, $data)
     {
-        $message = "Hello world from Qui!";
-        return View::render('pages.Home', compact('message'));
+        return View::render('pages.Home');
     }
 }

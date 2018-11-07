@@ -6,6 +6,9 @@ import Notifier from './Notifier';
 import $ from 'jquery';
 import 'jquery-validation';
 
+/*
+* A little helper for using a jquery plugin, jquery-form
+* */
 global.validateForm = (id, opts) => {
     $(`#${id}`).validate({
             errorPlacement: function (error, element) {

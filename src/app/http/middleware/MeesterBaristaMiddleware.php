@@ -13,6 +13,9 @@ use Qui\lib\facades\Authentication;
 use Qui\lib\Request;
 use Qui\lib\Response;
 
+/*
+ * Middleware for checking if the user is an admin. aka meester Barista.
+ * */
 class MeesterBaristaMiddleware
 {
     public function next(Request $req, Response $res) {

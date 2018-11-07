@@ -17,8 +17,14 @@ use Qui\lib\Request;
 use Qui\lib\Response;
 use Qui\lib\Routes;
 
+/*
+ * The controller used for the entire forum part of the project.
+ * */
 class ForumController
 {
+    /*
+     * Show forum home
+     * */
     public function showForumHome(Request $req, Response $res)
     {
         $posts = DB::execute("SELECT users.fname, users.lname, posts.id, posts.name, posts.lastTimeStamp FROM posts INNER JOIN `users` ON users.`id` = posts.`creatorid` ORDER BY posts.lastTimeStamp DESC");
@@ -28,17 +34,26 @@ class ForumController
         ], 'Forum home');
     }
 
+    /*
+     * Shows create page for a post
+     * */
     public function showPostCreate(Request $req, Response $res)
     {
         return View::render('pages.CreatePost');
     }
 
+    /*
+     * Triggers when a post is updated
+     * */
     public function showPostUpdate(Request $req, Response $res)
     {
         $post = (DB::selectWhere('*', 'posts', 'id', $req->params['id']))[0];
         return View::render('pages.UpdatePost', compact('post'));
     }
 
+    /*
+     * Triggers when a post is created
+     * */
     public function onPostCreate(Request $req, Response $res)
     {
         $user = Authentication::verify(true);
@@ -51,6 +66,9 @@ class ForumController
         return $res->redirect(Routes::$routes['forum-home']);
     }
 
+    /*
+     * Triggers when a post is updated
+     * */
     public function onPostUpdate(Request $req, Response $res)
     {
         $user = Authentication::verify(true);
@@ -68,6 +86,9 @@ class ForumController
         return $res->redirect(Routes::$routes['forum-home']);
     }
 
+    /*
+     * Triggers when a post is removed
+     * */
     public function onPostRemove(Request $req, Response $res)
     {
         if (!$req->params['id']) {
@@ -83,12 +104,18 @@ class ForumController
         return $res->redirect(Routes::$routes['forum-home']);
     }
 
+    /*
+     * Triggers when a post is read (with joins for the comments)
+     * */
     public function showPostRead(Request $req, Response $res) {
         $comments = DB::execute("SELECT comments.creatorid, comments.votes, comments.comment, comments.lastTimeStamp, comments.id, users.fname, users.lname FROM comments INNER JOIN `users` ON users.`id` = comments.`creatorid`WHERE comments.`postid` = ? ORDER BY comments.votes DESC", [$req->params['id']]);
         $post = (DB::selectWhere('*', 'posts', 'id', $req->params['id']))[0];
         return View::render('pages.ReadPost', compact('comments', 'post'));
     }
 
+    /*
+     * Triggers when you vote on a comment
+     * */
     public function onVote(Request $req, Response $res) {
 
         $vote = 0;
@@ -111,6 +138,9 @@ class ForumController
         return $res->redirect(Routes::$routes['forum-post-read'] . '?id=' . $post['id']);
     }
 
+    /*
+     * Triggers when a comment is created
+     * */
     public function onCommentCreate (Request $req, Response $res) {
         $user = Authentication::verify(true);
         DB::insertEntry('comments', [
@@ -123,6 +153,9 @@ class ForumController
         return $res->redirect(Routes::$routes['forum-post-read'] . '?id=' . $req->params['postId']);
     }
 
+    /*
+     * Triggers when a comment is updated
+     * */
     public function onCommentUpdate (Request $req, Response $res) {
         $comment = (DB::selectWhere('*', 'comments', 'id', $req->params['commentId']))[0];
 
@@ -137,6 +170,9 @@ class ForumController
         return $res->redirect(Routes::$routes['forum-post-read'] . '?id=' . $comment['postid']);
     }
 
+    /*
+     * Triggers when a comment is shown
+     * */
     public function showCommentUpdate(Request $req, Response $res) {
         $comment = (DB::selectWhere('*', 'comments', 'id', $req->params['id']))[0];
 
@@ -148,6 +184,9 @@ class ForumController
         return View::render('pages.CommentUpdate', compact('comment'));
     }
 
+    /*
+     * Triggers when a comment is deleted
+     * */
     public function onCommentDelete(Request $req, Response $res) {
         $comment = (DB::selectWhere('*', 'comments', 'id', $req->params['id']))[0];
 

@@ -10,7 +10,7 @@
     "build": "webpack --enviroment --progress production --config ./webpack.config.js",
     "prod": "npm run build && php executePHP.php",
     "buildprod": "webpack --progress --config ./webpack.config.js",
-    "seed": "php seed.php"
+    "seed": "echo 'Use the php seed.php command when you have filled in the seeder!! Also change this command to php seed.php when you are done.'"
   },
   "author": "Thomas-X",
   "license": "MIT",

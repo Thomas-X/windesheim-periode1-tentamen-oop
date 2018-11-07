@@ -12,6 +12,9 @@ use Qui\lib\facades\Authentication;
 use Qui\lib\facades\DB;
 use Qui\lib\facades\DB_PDO;
 
+/*
+ * A seeder for when the project needs something seeded.
+ * */
 class Seeder
 {
     public static $faker;

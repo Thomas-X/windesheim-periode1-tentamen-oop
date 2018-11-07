@@ -14,6 +14,9 @@ use Qui\lib\facades\DB;
 use Qui\lib\Request;
 use Qui\lib\Response;
 
+/*
+ * Middleware for checking authentication
+ * */
 class AuthenticationMiddleware
 {
     /**

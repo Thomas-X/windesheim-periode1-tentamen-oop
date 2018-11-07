@@ -9,6 +9,8 @@
 namespace Qui\lib;
 
 
+use ErrorException;
+
 class SuperSeriousErrorLogger
 {
     /*

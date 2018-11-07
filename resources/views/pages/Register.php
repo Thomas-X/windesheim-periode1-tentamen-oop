@@ -17,6 +17,11 @@
 
             <br/>
 
+            <label>Mobile*</label>
+            <input type="number" name="mobile"  class="form-control" id="mobile" placeholder="Enter your mobile number" required/>
+
+            <br/>
+
             <label>Password*</label>
             <input type="password" name="password"  class="form-control" id="password" placeholder="Enter your password" required/>
 

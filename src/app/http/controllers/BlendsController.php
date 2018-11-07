@@ -42,7 +42,7 @@ class BlendsController
     public function showBlends(Request $req, Response $res)
     {
         $blends = DB::execute("SELECT * FROM recipees WHERE isApproved=1");
-        $blendsRecentlyApproved = DB::execute("SELECT * FROM recipees ORDER BY lastUpdate DESC LIMIT 200");
+        $blendsRecentlyApproved = DB::execute("SELECT * FROM recipees WHERE isApproved=1 ORDER BY lastUpdate DESC LIMIT 200");
         $blendsAwaitingApproval = DB::execute("SELECT * FROM recipees WHERE isApproved=0 ORDER BY lastUpdate DESC LIMIT 200");
         return View::render('pages.Blends', compact('blends', 'blendsRecentlyApproved', 'blendsAwaitingApproval'));
     }

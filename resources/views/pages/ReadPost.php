@@ -41,7 +41,7 @@
                 </form>
             </div>
             <div class="col-sm-12 col-md-3 center-container flexColumn">
-                <?= $comment['fname'] . $comment['lname'] ?>
+                <?= $comment['fname'] . ' ' . $comment['lname'] ?>
                 <br/>
                 <p class="text-muted">
                     On <?= $comment['lastTimeStamp'] ?>

@@ -46,9 +46,9 @@ class CAuthentication
             header("Location: ". Routes::$routes['home']);
         } else {
             if (App::isDevelopmentEnviroment()) {
-                setcookie('token', null, time() + 1, '/');
+                setcookie('token', null, time() + 1,  Routes::$routes['home']);
             } else if (App::isProductionEnviroment()) {
-                setcookie('token', null, time() + 1, '/', "", true);
+                setcookie('token', null, time() + 1,  Routes::$routes['home'], "", true);
             }
             header("Location: " . Routes::$routes['home']);
         }

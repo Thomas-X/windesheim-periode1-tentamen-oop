@@ -30,7 +30,7 @@ class ForumController
         $posts = DB::execute("SELECT users.fname, users.lname, posts.id, posts.name, posts.lastTimeStamp FROM posts INNER JOIN `users` ON users.`id` = posts.`creatorid` ORDER BY posts.lastTimeStamp DESC");
         return View::react(App::REACT_APP_COMPONENTS['forum-home'], [
             'routes' => Routes::$routes,
-            'posts' => $posts
+            'posts' => $posts,
         ], 'Forum home');
     }
 

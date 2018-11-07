@@ -22,14 +22,14 @@
 
 -- Schema baristaapp
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `baristaapp`;
+DROP SCHEMA IF EXISTS `S1130146_baristaapp`;
 
 -- -----------------------------------------------------
 -- Schema baristaapp
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `baristaapp` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `S1130146_baristaapp` DEFAULT CHARACTER SET utf8 ;
 
-use `baristaapp`;
+use `S1130146_baristaapp`;
 
 # Dump of table comments
 # ------------------------------------------------------------

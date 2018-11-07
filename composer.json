@@ -1,0 +1,11 @@
+{
+	"autoload": {
+		"psr-4": {
+			"Qui\\": "src"
+		}
+	},
+	"require": {
+		"phpdocumentor/phpdocumentor": "2.*",
+		"fzaninotto/faker": "^1.8"
+	}
+}

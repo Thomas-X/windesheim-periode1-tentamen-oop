@@ -1,0 +1,14 @@
+composer.phar
+/vendor/
+.env
+/cache/
+/.idea/
+/node_modules/
+# add all files to ignore list
+/public/js/*
+/public/uploads/*
+/public/pictures/*
+# except our buddy .gitkeep since otherwise the folder is not committed
+!/public/js/.gitkeep
+!/public/uploads/.gitkeep
+!/public/pictures/.gitkeep

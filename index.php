@@ -1,7 +1,7 @@
 <?php
 
 // Used for (composer) autoloading
-require __DIR__ . '/../bootstrap.php';
+require __DIR__ . '/bootstrap.php';
 
 use Qui\lib\App;
 use Qui\lib\Database;
@@ -14,7 +14,7 @@ use Qui\lib\CMailer;
 use Qui\lib\CNotifierParser;
 
 // if there should be a prefix to all routes.. i.e /somethingsomething/someapp/hereisroot/
-\Qui\lib\Routes::morphRoutes("");
+\Qui\lib\Routes::morphRoutes("/~s1130146/P1_OOAPP_Tentamen");
 
 // \Qui\lib\SuperSeriousErrorLogger::enableErrorLogging(true);
 
@@ -42,7 +42,7 @@ App::setupDependencies([
     'mailer'                    => $mailer,
     'notifierparser'            => $notifierParser,
 ]);
-App::setupRoutes(__DIR__ . '/../routes/web.php');
+App::setupRoutes(__DIR__ . '/routes/web.php');
 
 // setup global functions. I got tired of importing Util:: every time so this is a simple wrapper around Util::dd
 function dd($val=null, $_=null) {

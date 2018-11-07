@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const outputPath = path.join(__dirname, 'public', 'js');
+const outputPath = path.join(__dirname, 'js');
 const dir = './resources/javascript';
 
 const javascriptDirectoryHelper = (pages) => {

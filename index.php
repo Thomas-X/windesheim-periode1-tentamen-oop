@@ -13,8 +13,12 @@ use Qui\lib\CValidator;
 use Qui\lib\CMailer;
 use Qui\lib\CNotifierParser;
 
+
+$_URL_PREPEND = "/~s1130146/P1_OOAPP_Tentamen";
+
 // if there should be a prefix to all routes.. i.e /somethingsomething/someapp/hereisroot/
-\Qui\lib\Routes::morphRoutes("/~s1130146/P1_OOAPP_Tentamen");
+\Qui\lib\Routes::morphRoutes($_URL_PREPEND);
+
 
 // \Qui\lib\SuperSeriousErrorLogger::enableErrorLogging(true);
 
